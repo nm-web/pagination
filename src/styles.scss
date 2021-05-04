@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/theme";
+:root{
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, html, :after,:before {
+  box-sizing: border-box;
+}
+
+body {
+  background: #a1b3c0;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-slider-horizontal .mat-slider-ticks {
+//background-size: 4% 0;
+  background-image: none;
+}

@@ -1,0 +1,19 @@
+
+<div class="wrapper">
+  <div class="toggler" (click)="showContent = !showContent">
+    <div class="select-title">{{selectedOption.value}}</div>
+
+    <mat-icon class="icon-arrow" [ngClass]="{'active': showContent}">expand_more</mat-icon>
+  </div>
+  <div *ngIf="showContent" class="content">
+    <ng-container *ngIf="addSearchToSelect">
+      <app-search (onResultChange)="onSearchChange($event)"></app-search>
+    </ng-container>
+
+    <div class="list">
+      <div *ngFor="let option of filteredOptions; index as index" (click)="optionClick($event, option)">
+        {{option.value}}
+      </div>
+    </div>
+  </div>
+</div>

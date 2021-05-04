@@ -1,0 +1,23 @@
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px auto;
+  padding: 1rem;
+  flex-wrap: wrap;
+  &__item {
+    flex:1;
+    margin: 0 10px;
+  }
+
+}
+.btn-filter {
+  display: block;
+  margin: 20px auto;
+}
+
+.filter-slider {
+  margin: 0 10px;
+  flex:1;
+}

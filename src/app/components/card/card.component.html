@@ -1,0 +1,30 @@
+<div class="card">
+
+  <h3 class="card__title">
+    {{product.name}}
+  </h3>
+  <p class="card__brand">
+    {{product.brand}}
+  </p>
+  <p class="card__brand">
+    {{product.artnumber}}
+  </p>
+  <div class="card-row">
+    <p><span class="card__subtext">Вес:</span>{{product.weight}}</p>
+    <p><span class="card__subtext">Фас:</span>{{product.quantity}}</p>
+  </div>
+  <div class="card-row">
+    <p class="card__price">
+      <span class="card__subtext">Цена:</span>
+      {{product.price}}
+      <span>руб.</span>
+    </p>
+  </div>
+  <p class="card__subtext">
+    Наличие на складе:
+  </p>
+  <p class="card__stock"> {{!!product.stock ? 'В наличии' : 'Ожидается'}}</p>
+
+
+</div>
+

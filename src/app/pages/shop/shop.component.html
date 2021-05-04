@@ -1,0 +1,73 @@
+<button mat-raised-button (click)="removeAllFilters()" class="btn-filter">Сбросить все фильтры</button>
+<div class="filters">
+
+  <div class="filters__item">
+    <app-select [addSearchToSelect]="true" [options]="filtersData.artnumber" [resetFilters]="resetFilters"
+                (selectionChange)="filterProducts($event,'artnumber')"></app-select>
+  </div>
+  <div class="filters__item">
+    <app-select [addSearchToSelect]="true" [options]="filtersData.name" [resetFilters]="resetFilters"
+                (selectionChange)="filterProducts($event,'name')"></app-select>
+  </div>
+  <div class="filters__item">
+    <app-select [addSearchToSelect]="true" [options]="filtersData.brand" [resetFilters]="resetFilters"
+                (selectionChange)="filterProducts($event,'brand')"></app-select>
+  </div>
+</div>
+<div class="filters">
+  <div class="filter-slider">
+    <div class="filter-slider__title">фильтр по весу:</div>
+    <div class="slider">
+      <span>0</span>
+      <mat-slider
+        [max]="filtersData.weight"
+        [min]=0
+        [step]=1
+        [thumbLabel]="thumbLabel"
+        [(ngModel)]="valueWeight"
+        (change)="filterProducts({value:$event.value, index:valueWeight},'weight')">
+      </mat-slider>
+      <span> {{filtersData.weight}}</span>
+    </div>
+  </div>
+  <div class="filter-slider">
+    <div class="filter-slider__title">фильтр по рассфасовке:</div>
+    <div class="slider">
+      <span>0</span>
+      <mat-slider
+        [max]="filtersData.quantity"
+        [min]=0
+        [step]=1
+        [thumbLabel]="thumbLabel"
+        [(ngModel)]="valueQuantity"
+        (change)="filterProducts({value:$event.value, index:valueQuantity},'quantity')">
+      </mat-slider>
+      <span> {{filtersData.quantity}}</span>
+    </div>
+  </div>
+  <div class="filter-slider">
+    <div class="filter-slider__title">фильтр по цене:</div>
+    <div class="slider">
+      <span>0</span>
+      <mat-slider
+        [max]="filtersData.price"
+        [min]=0
+        [step]=1
+        [thumbLabel]="thumbLabel"
+        [(ngModel)]="valuePrice"
+        (change)="filterProducts({value:$event.value, index:valuePrice},'price')">
+      </mat-slider>
+      <span> {{filtersData.price}}</span>
+    </div>
+  </div>
+  <div class="filters__item">
+    <mat-checkbox [(ngModel)]="currentFilters.stock" [checked]="currentFilters.stock" (ngModelChange)="applyFilters()"
+                  color="primary">В
+      наличии
+    </mat-checkbox>
+  </div>
+</div>
+
+
+<app-list-card [products]="filteredProducts"></app-list-card>
+

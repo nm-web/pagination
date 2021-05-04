@@ -1,0 +1,40 @@
+.wrapper {
+  //width: 200px;
+  position: relative;
+}
+
+.toggler {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.select-title {
+  width: inherit;
+  background: white;
+  padding: 2px 5px;
+}
+
+.content {
+  cursor: pointer;
+  max-height: 100px;
+  overflow-y: scroll;
+  background: white;
+  padding: 0 5px;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  top: 100%;
+  left: 0;
+}
+
+.icon-arrow {
+  transform: rotate(0);
+  background: white;
+}
+
+.icon-arrow.active {
+  transform: rotate(180deg);
+}

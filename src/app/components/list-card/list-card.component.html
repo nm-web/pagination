@@ -1,0 +1,11 @@
+<div class="card-list">
+  <ng-container *ngFor="let product of productsPage">
+    <app-card [product]="product"></app-card>
+  </ng-container>
+</div>
+
+<mat-paginator [length]="length"
+               [pageIndex]="pageIndex"
+               [pageSize]="pageSize"
+               (page)="pageEvent = getPaginatorData($event)">
+</mat-paginator>
